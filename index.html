@@ -4,67 +4,83 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nayan Soren</title>
+
 <style>
 :root{
-  --text:#333;
-  --muted:#666;
+  --text:#333333;
+  --muted:#666666;
   --line:#e5e5e5;
   --accent:#2f6fa3;
   --bg:#fafafa;
 }
-*{box-sizing:border-box}
+
+*{
+  box-sizing:border-box;
+}
+
 body{
   margin:0;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  padding:0;
+  font-family:"Times New Roman", Times, serif;
+  font-size:14px;
   color:var(--text);
   background:var(--bg);
-  line-height:1.55;
+  line-height:1.6;
 }
+
+/* HEADER */
 header{
-  position:sticky;
-  top:0;
-  background:#fff;
+  background:#ffffff;
   border-bottom:1px solid var(--line);
-  z-index:10;
 }
+
 .nav{
   max-width:1200px;
   margin:auto;
   display:flex;
-  align-items:center;
   justify-content:space-between;
+  align-items:center;
   padding:16px 24px;
 }
+
 .brand{
-  font-size:32px;
+  font-size:20px;
   font-weight:700;
 }
-.menu a{
-  margin-left:28px;
-  text-decoration:none;
-  color:#555;
-  font-size:22px;
-}
-.menu a:hover{color:var(--accent)}
 
+.menu a{
+  margin-left:24px;
+  text-decoration:none;
+  color:#444444;
+  font-size:14px;
+}
+
+.menu a:hover{
+  color:var(--accent);
+}
+
+/* LAYOUT */
 .wrap{
   max-width:1200px;
-  margin:36px auto;
+  margin:30px auto;
   display:grid;
-  grid-template-columns:300px 1fr;
-  gap:40px;
+  grid-template-columns:280px 1fr;
+  gap:30px;
   padding:0 24px;
 }
 
+/* SIDEBAR */
 .sidebar{
   align-self:start;
 }
+
 .card{
-  background:#fff;
+  background:#ffffff;
   border:1px solid var(--line);
-  border-radius:18px;
+  border-radius:8px;
   padding:24px;
 }
+
 .photo{
   width:180px;
   height:180px;
@@ -73,74 +89,114 @@ header{
   display:block;
   margin:0 auto 18px;
 }
+
 .name{
   text-align:center;
-  font-size:36px;
-  font-weight:700;
-  margin:8px 0;
-}
-.role,.loc{
-  text-align:center;
-  color:var(--muted);
   font-size:22px;
+  font-weight:700;
+  margin:10px 0;
+}
+
+.role,
+.loc{
+  text-align:center;
+  font-size:14px;
+  color:var(--muted);
   margin:8px 0;
 }
+
 .links{
-  margin-top:18px;
+  margin-top:20px;
 }
+
 .links a{
   display:block;
   text-decoration:none;
-  color:#444;
-  margin:12px 0;
-  font-size:22px;
+  color:#444444;
+  font-size:14px;
+  margin:10px 0;
 }
-.links a:hover{color:var(--accent)}
 
+.links a:hover{
+  color:var(--accent);
+}
+
+/* MAIN CONTENT */
 .main{
-  background:#fff;
+  background:#ffffff;
   border:1px solid var(--line);
-  border-radius:18px;
-  padding:36px;
+  border-radius:8px;
+  padding:30px;
 }
-h1{
-  margin:0 0 18px;
-  font-size:56px;
-}
-h2{
-  margin-top:38px;
-  font-size:40px;
-}
-p, li{
-  font-size:28px;
-  color:#444;
-}
-a{color:var(--accent)}
-ul{padding-left:28px}
 
+h1{
+  font-size:32px;
+  margin-top:0;
+  margin-bottom:16px;
+}
+
+h2{
+  font-size:22px;
+  margin-top:30px;
+  margin-bottom:10px;
+}
+
+p,
+li{
+  font-size:14px;
+}
+
+a{
+  color:var(--accent);
+  text-decoration:none;
+}
+
+a:hover{
+  text-decoration:underline;
+}
+
+ul{
+  padding-left:20px;
+}
+
+/* FOOTER */
 footer{
   max-width:1200px;
-  margin:30px auto 50px;
+  margin:20px auto 40px auto;
   padding:0 24px;
-  color:#777;
-  font-size:18px;
+  text-align:center;
+  color:#777777;
+  font-size:13px;
 }
 
+/* MOBILE */
 @media (max-width: 900px){
-  .wrap{grid-template-columns:1fr}
-  .menu{display:none}
-  h1{font-size:42px}
-  h2{font-size:32px}
-  p,li,.links a,.role,.loc{font-size:20px}
-  .name{font-size:30px}
+
+  .wrap{
+    grid-template-columns:1fr;
+  }
+
+  .menu{
+    display:none;
+  }
+
+  h1{
+    font-size:26px;
+  }
+
+  h2{
+    font-size:20px;
+  }
 }
 </style>
 </head>
+
 <body>
 
 <header>
   <div class="nav">
     <div class="brand">Nayan Soren</div>
+
     <nav class="menu">
       <a href="#research">Research</a>
       <a href="#teaching">Teaching</a>
@@ -152,24 +208,32 @@ footer{
 
 <div class="wrap">
 
+  <!-- LEFT SIDEBAR -->
   <aside class="sidebar">
     <div class="card">
-      <img class="photo" src="https://via.placeholder.com/300x300.png?text=Photo" alt="Profile photo">
+
+      <!-- CHANGE IMAGE NAME HERE -->
+      <img class="photo" src="profile.jpg" alt="Profile Photo">
+
       <div class="name">Nayan Soren</div>
+
       <div class="role">PhD Scholar in Economics</div>
       <div class="loc">India</div>
 
       <div class="links">
-        <a href="mailto:youremail@email.com">✉ Email</a>
+        <a href="mailto:youremail@email.com">Email</a>
         <a href="#">Google Scholar</a>
         <a href="#">ORCID</a>
         <a href="#">LinkedIn</a>
         <a href="#">X / Twitter</a>
       </div>
+
     </div>
   </aside>
 
+  <!-- MAIN CONTENT -->
   <main class="main">
+
     <h1>Welcome to my website!</h1>
 
     <p>
@@ -183,22 +247,35 @@ footer{
     </p>
 
     <h2 id="research">Research Interests</h2>
+
     <ul>
       <li>Agrarian Political Economy</li>
       <li>Development Economics</li>
       <li>Labour Economics</li>
       <li>Rural Transformation</li>
-      <li>Inequality & Regional Development</li>
+      <li>Inequality and Regional Development</li>
     </ul>
 
     <h2 id="teaching">Teaching</h2>
-    <p>Economics of Development, Statistics, Indian Economy, Political Economy.</p>
 
-    <h2 id="cv">CV</h2>
-    <p><a href="#">Download my CV (PDF)</a></p>
+    <p>
+      Economics of Development, Statistics, Indian Economy,
+      Political Economy.
+    </p>
+
+    <h2 id="cv">Curriculum Vitae</h2>
+
+    <p>
+      <a href="#">Download CV (PDF)</a>
+    </p>
 
     <h2 id="contact">Contact</h2>
-    <p>You can reach me at <a href="mailto:youremail@email.com">youremail@email.com</a></p>
+
+    <p>
+      You can reach me at
+      <a href="mailto:youremail@email.com">youremail@email.com</a>
+    </p>
+
   </main>
 
 </div>
