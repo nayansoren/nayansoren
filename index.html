@@ -7,11 +7,12 @@
 
 <style>
 :root{
-  --text:#333333;
-  --muted:#666666;
-  --line:#e5e5e5;
-  --accent:#2f6fa3;
-  --bg:#fafafa;
+  --text:#2e2a26;
+  --muted:#6d655f;
+  --line:#e6ddd3;
+  --accent:#8a5a2b;
+  --bg:#f4efe8;
+  --card:#fbf7f2;
 }
 
 *{
@@ -20,38 +21,34 @@
 
 body{
   margin:0;
-  padding:0;
-  font-family:"Times New Roman", Times, serif;
-  font-size:14px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size:15px;
   color:var(--text);
   background:var(--bg);
-  line-height:1.6;
+  line-height:1.8;
 }
 
 /* HEADER */
 header{
-  background:#ffffff;
-  border-bottom:1px solid var(--line);
-}
-
-.nav{
-  max-width:1200px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:16px 24px;
+  text-align:center;
+  padding:30px 20px 10px;
 }
 
 .brand{
-  font-size:20px;
-  font-weight:700;
+  font-size:32px;
+  font-style:italic;
+  letter-spacing:1px;
+}
+
+/* NAV */
+.menu{
+  margin-top:10px;
 }
 
 .menu a{
-  margin-left:24px;
+  margin:0 14px;
   text-decoration:none;
-  color:#444444;
+  color:var(--muted);
   font-size:14px;
 }
 
@@ -59,133 +56,87 @@ header{
   color:var(--accent);
 }
 
-/* LAYOUT */
+/* MAIN WRAP */
 .wrap{
-  max-width:1200px;
+  max-width:900px;
   margin:30px auto;
-  display:grid;
-  grid-template-columns:280px 1fr;
-  gap:30px;
-  padding:0 24px;
-}
-
-/* SIDEBAR */
-.sidebar{
-  align-self:start;
-}
-
-.card{
-  background:#ffffff;
+  padding:30px;
+  background:var(--card);
   border:1px solid var(--line);
-  border-radius:8px;
-  padding:24px;
+}
+
+/* PROFILE */
+.profile{
+  display:flex;
+  gap:25px;
+  align-items:center;
+  margin-bottom:30px;
+  border-bottom:1px solid var(--line);
+  padding-bottom:20px;
 }
 
 .photo{
-  width:180px;
-  height:180px;
-  border-radius:50%;
+  width:120px;
+  height:120px;
+  border-radius:4px;
   object-fit:cover;
-  display:block;
-  margin:0 auto 18px;
 }
 
 .name{
-  text-align:center;
-  font-size:22px;
-  font-weight:700;
-  margin:10px 0;
+  font-size:26px;
+  margin:0;
 }
 
-.role,
-.loc{
-  text-align:center;
-  font-size:14px;
+.role{
   color:var(--muted);
-  margin:8px 0;
-}
-
-.links{
-  margin-top:20px;
+  margin-top:6px;
 }
 
 .links a{
-  display:block;
+  margin-right:12px;
   text-decoration:none;
-  color:#444444;
-  font-size:14px;
-  margin:10px 0;
-}
-
-.links a:hover{
   color:var(--accent);
+  font-size:14px;
 }
 
-/* MAIN CONTENT */
-.main{
-  background:#ffffff;
-  border:1px solid var(--line);
-  border-radius:8px;
-  padding:30px;
-}
-
+/* CONTENT */
 h1{
-  font-size:32px;
-  margin-top:0;
-  margin-bottom:16px;
-}
-
-h2{
-  font-size:22px;
-  margin-top:30px;
+  font-size:26px;
   margin-bottom:10px;
 }
 
-p,
-li{
-  font-size:14px;
+h2{
+  font-size:20px;
+  margin-top:25px;
+  border-bottom:1px solid var(--line);
+  padding-bottom:4px;
+}
+
+p, li{
+  font-size:15px;
 }
 
 a{
   color:var(--accent);
-  text-decoration:none;
-}
-
-a:hover{
-  text-decoration:underline;
 }
 
 ul{
-  padding-left:20px;
+  padding-left:18px;
 }
 
 /* FOOTER */
 footer{
-  max-width:1200px;
-  margin:20px auto 40px auto;
-  padding:0 24px;
   text-align:center;
-  color:#777777;
+  margin:40px 0;
+  color:var(--muted);
   font-size:13px;
 }
 
 /* MOBILE */
-@media (max-width: 900px){
-
-  .wrap{
-    grid-template-columns:1fr;
-  }
-
-  .menu{
-    display:none;
-  }
-
-  h1{
-    font-size:26px;
-  }
-
-  h2{
-    font-size:20px;
+@media (max-width:700px){
+  .profile{
+    flex-direction:column;
+    text-align:center;
   }
 }
 </style>
@@ -194,89 +145,72 @@ footer{
 <body>
 
 <header>
-  <div class="nav">
-    <div class="brand">Nayan Soren</div>
-
-    <nav class="menu">
-      <a href="#research">Research</a>
-      <a href="#teaching">Teaching</a>
-      <a href="#cv">CV</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
+  <div class="brand">Nayan Soren</div>
+  <nav class="menu">
+    <a href="#research">Research</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#cv">CV</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
 <div class="wrap">
 
-  <!-- LEFT SIDEBAR -->
-  <aside class="sidebar">
-    <div class="card">
+  <!-- PROFILE -->
+  <div class="profile">
+    <img class="photo" src="profile.jpg" alt="Profile Photo">
 
-      <!-- CHANGE IMAGE NAME HERE -->
-      <img class="photo" src="profile.jpg" alt="Profile Photo">
-
-      <div class="name">Nayan Soren</div>
-
-      <div class="role">PhD Scholar in Economics</div>
-      <div class="loc">India</div>
+    <div>
+      <h2 class="name">Nayan Soren</h2>
+      <div class="role">PhD Scholar in Economics • India</div>
 
       <div class="links">
         <a href="mailto:youremail@email.com">Email</a>
         <a href="#">Google Scholar</a>
         <a href="#">ORCID</a>
         <a href="#">LinkedIn</a>
-        <a href="#">X / Twitter</a>
       </div>
-
     </div>
-  </aside>
+  </div>
 
-  <!-- MAIN CONTENT -->
-  <main class="main">
+  <!-- CONTENT -->
+  <h1>Welcome</h1>
 
-    <h1>Welcome to my website!</h1>
+  <p>
+    I am a researcher working in development economics, agrarian political economy,
+    labour markets, and structural transformation in India.
+  </p>
 
-    <p>
-      I am a researcher working in development economics, agrarian political economy,
-      labour markets, and structural transformation in India.
-    </p>
+  <p>
+    My doctoral research examines agrarian change, structural marginalisation,
+    and livelihood reproduction with special reference to Jharkhand.
+  </p>
 
-    <p>
-      My doctoral research examines agrarian change, structural marginalisation,
-      and livelihood reproduction with special reference to Jharkhand.
-    </p>
+  <h2 id="research">Research Interests</h2>
+  <ul>
+    <li>Agrarian Political Economy</li>
+    <li>Development Economics</li>
+    <li>Labour Economics</li>
+    <li>Rural Transformation</li>
+    <li>Inequality and Regional Development</li>
+  </ul>
 
-    <h2 id="research">Research Interests</h2>
+  <h2 id="teaching">Teaching</h2>
+  <p>
+    Economics of Development, Statistics, Indian Economy,
+    Political Economy.
+  </p>
 
-    <ul>
-      <li>Agrarian Political Economy</li>
-      <li>Development Economics</li>
-      <li>Labour Economics</li>
-      <li>Rural Transformation</li>
-      <li>Inequality and Regional Development</li>
-    </ul>
+  <h2 id="cv">Curriculum Vitae</h2>
+  <p>
+    <a href="#">Download CV (PDF)</a>
+  </p>
 
-    <h2 id="teaching">Teaching</h2>
-
-    <p>
-      Economics of Development, Statistics, Indian Economy,
-      Political Economy.
-    </p>
-
-    <h2 id="cv">Curriculum Vitae</h2>
-
-    <p>
-      <a href="#">Download CV (PDF)</a>
-    </p>
-
-    <h2 id="contact">Contact</h2>
-
-    <p>
-      You can reach me at
-      <a href="mailto:youremail@email.com">youremail@email.com</a>
-    </p>
-
-  </main>
+  <h2 id="contact">Contact</h2>
+  <p>
+    Reach me at
+    <a href="mailto:youremail@email.com">youremail@email.com</a>
+  </p>
 
 </div>
 
